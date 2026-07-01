@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/media/sf_linux/game_engine_dev/GED2D/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

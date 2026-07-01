@@ -1,0 +1,6 @@
+﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(537,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  main.cpp
+  Window.cpp
+  Generating Code...
+C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(1588,5): warning MSB8012: TargetName(..\binGED_EDITOR.exe) does not match the Library's OutputFile property value (binGED_EDITOR.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+  GED_WINDOW.vcxproj -> I:\game_engine_dev\GED2D\binGED_EDITOR.exe.lib

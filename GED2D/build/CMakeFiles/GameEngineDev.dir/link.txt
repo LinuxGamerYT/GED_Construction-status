@@ -1,0 +1,3 @@
+/usr/bin/cmake -E rm -f CMakeFiles/GameEngineDev.dir/objects.a
+/usr/bin/x86_64-w64-mingw32-ar qc CMakeFiles/GameEngineDev.dir/objects.a @CMakeFiles/GameEngineDev.dir/objects1.rsp
+/usr/bin/x86_64-w64-mingw32-g++ -Wl,--whole-archive CMakeFiles/GameEngineDev.dir/objects.a -Wl,--no-whole-archive -o /media/sf_linux/game_engine_dev/GED2D/bin/GameEngineDev.exe -Wl,--out-implib,libGameEngineDev.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/GameEngineDev.dir/linkLibs.rsp

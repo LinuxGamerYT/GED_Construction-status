@@ -1,0 +1,1 @@
+  -L/media/sf_linux/game_engine_dev/GED2D/Dependencies/SDL/lib/x64  -lSDL2 -lSDL2main -lopengl32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
