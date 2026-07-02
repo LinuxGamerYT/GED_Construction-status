@@ -65,6 +65,7 @@ GameEngine/
   - MSVC
   - GCC
   - Clang
+- OpenGL 3.3 support 
 
 ### Build
 
@@ -84,7 +85,7 @@ cmake --build .
 ## Current Progress
 
 - [x] Initialize project
-- [ ] Open a window
+- [x] Open a window
 - [ ] Handle window events
 - [ ] Clear screen
 - [ ] Render a triangle
