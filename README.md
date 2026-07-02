@@ -70,7 +70,7 @@ GameEngine/
 ### Build
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/LinuxGamerYT/GED_Construction-status.git
 cd GameEngine
 
 mkdir build
