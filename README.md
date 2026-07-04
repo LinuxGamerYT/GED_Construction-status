@@ -86,8 +86,8 @@ cmake --build .
 
 - [x] Initialize project
 - [x] Open a window
-- [ ] Handle window events
-- [ ] Clear screen
+- [x] Handle window events
+- [x] Clear screen
 - [ ] Render a triangle
 - [ ] Load shaders
 - [ ] Draw meshes
