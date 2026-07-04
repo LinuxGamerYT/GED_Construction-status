@@ -18,13 +18,13 @@ The goal is to build a clean, extensible foundation for 2D (and later 3D) applic
 
 **Goal:** Get a stable runtime window with a functioning render loop.
 
-- Window creation (SDL / GLFW) [x]
-- OpenGL context setup (3.3 core profile) [x]
-- Main game loop [x]
-- Event handling (keyboard, mouse, window close) [x]
-- Delta time system (frame timing) [x]
-- Screen clearing (render pipeline start) [x]
-- Basic rendering (triangle / quad) []
+- Window creation (SDL / GLFW) ✅
+- OpenGL context setup (3.3 core profile) ✅
+- Main game loop ✅
+- Event handling (keyboard, mouse, window close) ✅
+- Delta time system (frame timing) ✅
+- Screen clearing (render pipeline start) ✅
+- Basic rendering (triangle / quad) ❌
 
 **Result:**  
 A running application that updates every frame and renders basic geometry.
@@ -35,11 +35,11 @@ A running application that updates every frame and renders basic geometry.
 
 **Goal:** Build a reusable rendering abstraction layer.
 
-- Shader compilation system (vertex/fragment) []
-- Texture loading (stb_image) []
-- Sprite rendering (2D quads) []
-- Transform system (position, rotation, scale) []
-- 2D camera system (view/projection) []
+- Shader compilation system (vertex/fragment) ❌
+- Texture loading (stb_image) ❌
+- Sprite rendering (2D quads) ❌
+- Transform system (position, rotation, scale) ❌
+- 2D camera system (view/projection) ❌
 
 **Result:**  
 Engine can render textured, transformed objects in 2D space.
@@ -50,11 +50,11 @@ Engine can render textured, transformed objects in 2D space.
 
 **Goal:** Refactor into a modular engine core.
 
-- Core Engine class (Init / Update / Shutdown) []
-- Renderer module abstraction []
-- Input system wrapper []
-- Entity system (basic ECS or object model) []
-- Scene management system []
+- Core Engine class (Init / Update / Shutdown) ❌
+- Renderer module abstraction ❌
+- Input system wrapper ❌
+- Entity system (basic ECS or object model) ❌
+- Scene management system ❌
 
 **Result:**  
 Clean separation between engine systems and application logic.
@@ -65,11 +65,11 @@ Clean separation between engine systems and application logic.
 
 **Goal:** Enable real game development inside the engine.
 
-- AABB collision detection []
-- Basic physics (velocity, acceleration) []
-- Asset management system (texture caching) []
-- Sprite animation system []
-- Simple UI system (buttons / text rendering) []
+- AABB collision detection ❌
+- Basic physics (velocity, acceleration) ❌
+- Asset management system (texture caching) ❌
+- Sprite animation system ❌
+- Simple UI system (buttons / text rendering) ❌
 
 **Result:**  
 Fully playable 2D prototypes (e.g., platformer or top-down game).
@@ -80,11 +80,11 @@ Fully playable 2D prototypes (e.g., platformer or top-down game).
 
 **Goal:** Improve performance and usability.
 
-- Scene transitions []
-- Debug overlay (FPS, logging) []
-- Serialization (save/load system) []
-- Particle system (optional) []
-- Rendering optimization (batching, draw calls) []
+- Scene transitions ❌
+- Debug overlay (FPS, logging) ❌
+- Serialization (save/load system) ❌
+- Particle system (optional) ❌
+- Rendering optimization (batching, draw calls) ❌
 
 **Result:**  
 Stable engine capable of running complete small games.
@@ -96,7 +96,8 @@ Stable engine capable of running complete small games.
 **Goal:** Build a complete game using the engine.
 
 Example project:
-- Top-down shooter []
+- doom 1993 ❌
+- cookie clicker ❌
 
 **Result:**  
 End-to-end demonstration of the engine.
