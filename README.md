@@ -1,151 +1,171 @@
-# Game Engine Dev DoomGamer edition
+# GED Engine
 
-A custom game engine built from scratch to learn graphics programming, engine architecture, and game development fundamentals.
-
-> **Current Status:** 🚧 Early Development
-
-## Features
-
-### Current
-- ✅ Project setup
-- ✅ Window creation
-- ✅ Application loop
-
-### Planned
-- Rendering system
-- Input handling
-- Event system
-- Entity Component System (ECS)
-- Asset manager
-- Camera system
-- Physics
-- Audio
-- UI system
-- Scene management
-- Scripting support
+> A lightweight, modular 2D game engine built in C++ using OpenGL 3.3.
 
 ---
 
-## Project Goals
+## 📌 Overview
 
-This project is a learning-focused game engine created to better understand how modern game engines work internally.
+**GED (Game Engine Development)** is an experimental real-time rendering engine focused on learning graphics programming, engine architecture, and systems design.
 
-The engine will be developed incrementally, starting with:
-1. Opening a window
-2. Rendering graphics
-3. Handling user input
-4. Managing scenes and entities
-5. Building a complete rendering pipeline
+The goal is to build a clean, extensible foundation for 2D (and later 3D) applications while understanding how real game engines are structured internally.
 
 ---
 
-## Project Structure
+## 🧭 Development Roadmap (12 Months)
 
-```
-GameEngine/
-├── src/
-│   ├── main.cpp
-│   └── ...
-├── include/
-├── assets/
-├── build/
-├── CMakeLists.txt
-└── README.md
-```
+### 🟢 Phase 1 — Foundation (Window + Loop + Rendering Setup)
+
+**Goal:** Get a stable runtime window with a functioning render loop.
+
+- Window creation (SDL / GLFW) [x]
+- OpenGL context setup (3.3 core profile) [x]
+- Main game loop [x]
+- Event handling (keyboard, mouse, window close) [x]
+- Delta time system (frame timing) [x]
+- Screen clearing (render pipeline start) [x]
+- Basic rendering (triangle / quad) []
+
+**Result:**  
+A running application that updates every frame and renders basic geometry.
 
 ---
 
-## Building
+### 🔵 Phase 2 — Rendering System
+
+**Goal:** Build a reusable rendering abstraction layer.
+
+- Shader compilation system (vertex/fragment) []
+- Texture loading (stb_image) []
+- Sprite rendering (2D quads) []
+- Transform system (position, rotation, scale) []
+- 2D camera system (view/projection) []
+
+**Result:**  
+Engine can render textured, transformed objects in 2D space.
+
+---
+
+### 🟡 Phase 3 — Engine Architecture
+
+**Goal:** Refactor into a modular engine core.
+
+- Core Engine class (Init / Update / Shutdown) []
+- Renderer module abstraction []
+- Input system wrapper []
+- Entity system (basic ECS or object model) []
+- Scene management system []
+
+**Result:**  
+Clean separation between engine systems and application logic.
+
+---
+
+### 🟠 Phase 4 — Gameplay Systems
+
+**Goal:** Enable real game development inside the engine.
+
+- AABB collision detection []
+- Basic physics (velocity, acceleration) []
+- Asset management system (texture caching) []
+- Sprite animation system []
+- Simple UI system (buttons / text rendering) []
+
+**Result:**  
+Fully playable 2D prototypes (e.g., platformer or top-down game).
+
+---
+
+### 🔴 Phase 5 — Polish & Optimization
+
+**Goal:** Improve performance and usability.
+
+- Scene transitions []
+- Debug overlay (FPS, logging) []
+- Serialization (save/load system) []
+- Particle system (optional) []
+- Rendering optimization (batching, draw calls) []
+
+**Result:**  
+Stable engine capable of running complete small games.
+
+---
+
+### 🟣 Phase 6 — Final Application
+
+**Goal:** Build a complete game using the engine.
+
+Example project:
+- Top-down shooter []
+
+**Result:**  
+End-to-end demonstration of the engine.
+
+---
+
+## ⚙️ Build Instructions
 
 ### Requirements
 
-- C++20 (or your chosen standard)
-- CMake 3.20+
-- A C++ compiler
-  - MSVC
-  - GCC
-  - Clang
-- OpenGL 3.3 support 
+- C++17 or higher
+- CMake 3.15+
+- OpenGL 3.3 compatible GPU & drivers
+- SDL2 or GLFW
+- Windows / Linux (havent tested on mac)
 
-### Build
+---
+
+### Build (Linux / Windows)
 
 ```bash
 git clone https://github.com/LinuxGamerYT/GED_Construction-status.git
-cd GameEngine
+cd GED_Construction-status
 
 mkdir build
 cd build
 
-cmake ..
-cmake --build .
+make
+make run
 ```
 
 ---
 
-## Current Progress
+## 🚀 Project Goals
 
-- [x] Initialize project
-- [x] Open a window
-- [x] Handle window events
-- [x] Clear screen
-- [ ] Render a triangle
-- [ ] Load shaders
-- [ ] Draw meshes
-- [ ] Camera system
-- [ ] Scene system
+This engine is built to explore:
+
+- Real-time rendering pipelines
+- Low-level graphics programming
+- Engine architecture patterns
+- Memory and performance considerations
+- Modular system design
 
 ---
 
-## Roadmap
+## 🧠 Design Philosophy
 
-### Phase 1
-- Window creation
-- Game loop
-- Logging
-- Timing
+GED is intentionally minimal and learning-focused.
 
-### Phase 2
-- Graphics API integration
-- Renderer
-- Shader system
-- Texture loading
+It avoids:
+- Over-engineering
+- External abstraction layers that hide OpenGL
+- Premature optimization
 
-### Phase 3
-- ECS
-- Asset manager
-- Input system
-
-### Phase 4
-- Physics
-- Audio
-- UI
-- Editor
+It prioritizes:
+- Clarity
+- Control
+- Understanding core systems
 
 ---
 
-## Technologies
+## ⚠️ Status
 
-- C++
-- CMake
-- (Graphics API: OpenGL)
-- GLFW / SDL (if used)
+This project is actively under development.
 
----
-
-## Learning Objectives
-
-This project is intended to explore:
-
-- Engine architecture
-- Graphics programming
-- Memory management
-- Rendering pipelines
-- Multithreading
-- Resource management
-- Mathematics for graphics
+Expect frequent changes, refactors, and incomplete systems.
 
 ---
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License.
+This project is for educational purposes and portfolio development.
