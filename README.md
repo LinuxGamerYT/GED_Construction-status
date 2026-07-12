@@ -24,7 +24,7 @@ The goal is to build a clean, extensible foundation for 2D (and later 3D) applic
 - Event handling (keyboard, mouse, window close) ✅
 - Delta time system (frame timing) ✅
 - Screen clearing (render pipeline start) ✅
-- Basic rendering (triangle / quad) ❌
+- Basic rendering (triangle / quad) ✅
 
 **Result:**  
 A running application that updates every frame and renders basic geometry.
