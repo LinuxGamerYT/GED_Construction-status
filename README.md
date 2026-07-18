@@ -35,9 +35,9 @@ A running application that updates every frame and renders basic geometry.
 
 **Goal:** Build a reusable rendering abstraction layer.
 
-- Shader compilation system (vertex/fragment) ❌
-- Texture loading (stb_image) ❌
-- Sprite rendering (2D quads) ❌
+- Shader compilation system (vertex/fragment) ⚠️ (50%)
+- Texture loading (stb_image) ⚠️ (10%)
+- Sprite rendering (2D quads) ⚠️ (25%)
 - Transform system (position, rotation, scale) ❌
 - 2D camera system (view/projection) ❌
 
@@ -51,8 +51,8 @@ Engine can render textured, transformed objects in 2D space.
 **Goal:** Refactor into a modular engine core.
 
 - Core Engine class (Init / Update / Shutdown) ❌
-- Renderer module abstraction ❌
-- Input system wrapper ❌
+- Renderer module abstraction ⚠️ (5%)
+- Input system wrapper ⚠️ (20%)
 - Entity system (basic ECS or object model) ❌
 - Scene management system ❌
 
