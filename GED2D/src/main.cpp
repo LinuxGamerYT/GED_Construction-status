@@ -6,6 +6,34 @@
 #include "glad/glad.h"
 #include "Windowing/Window.h"
 
+bool LoadTexture(const std::string& filepath, int& width, int& height, bool blended)
+{
+    int channels = 0;
+    GLint format = GL_RGBA;
+
+    switch (channels){
+        case 3: format = GL_RGB; break;
+        case 4: format = GL_RGBA; break;
+    }
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    if (!blended)
+    {
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    }
+    else
+    {
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);   
+    }
+
+
+    return true;
+}
+
+
 int main()
 {
     // -------------------------
@@ -61,20 +89,38 @@ int main()
         return -1;
     }
 
+    // temporary texture ID for testing
+    GLuint texID;
+    glGenTextures(1, &texID);
+    glBindTexture(GL_TEXTURE_2D, texID);
+
+    // create width and height for the texture to be loaded into
+    int width{0}, height{0};
+
+    // Now we can load the texture
+    if (!LoadTexture("assets/textures/texture.png", width, height, true))
+    {
+        std::cout << "Failed to load texture\n";
+        return -1;
+    }
+
+    // creates vertices for a square to be drawn
+    float vertices[] = {
+        -0.5f, 0.5f, 0.0f, 0.f, 1.f,
+        0.5f, 0.5f, 0.0f, 1.f, 1.f,
+        0.5f, -0.5f, 0.0f, 1.f, 0.f,
+        -0.5f, -0.5f, 0.0f, 0.f, 0.f
+    };
+
+    GLuint indices[] = {
+        0, 1, 2,
+        2, 3, 0
+    };
+
+
     std::cout << "Vendor   : " << glGetString(GL_VENDOR) << '\n';
     std::cout << "Renderer : " << glGetString(GL_RENDERER) << '\n';
     std::cout << "Version  : " << glGetString(GL_VERSION) << '\n';
-
-    // -------------------------
-    // Triangle vertices
-    // -------------------------
-
-    float vertices[] =
-    {
-         0.0f,  0.5f, 0.0f,
-         0.5f, -0.5f, 0.0f,
-        -0.5f, -0.5f, 0.0f
-    };
 
     // -------------------------
     // Vertex Shader
@@ -82,11 +128,14 @@ int main()
 
     const char* vertexSource =
         "#version 330 core\n"
-        "layout(location = 0) in vec3 aPos;\n"
+        "layout (location = 0) in vec3 aPosition;\n"
+        "layout (location = 1) in vec2 aTexCoord;\n"
+        "out vec2 fragUVs;\n"
         "void main()\n"
         "{\n"
-        "    gl_Position = vec4(aPos,1.0);\n"
-        "}";
+        "    gl_Position = vec4(aPosition, 1.0);\n"
+        "    fragUVs = aTexCoord;\n"
+        "}\0";
 
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
 
@@ -115,10 +164,12 @@ int main()
 
     const char* fragmentSource =
         "#version 330 core\n"
-        "out vec4 FragColor;\n"
+        "in vec2 fragUVs;\n"
+        "out vec4 color;\n"
+        "uniform sampler2D uTexture;\n"
         "void main()\n"
         "{\n"
-        "    FragColor = vec4(1.0,0.0,1.0,1.0);\n"
+        "    color = texture(uTexture, fragUVs);\n"
         "}";
 
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -194,11 +245,12 @@ int main()
         3,
         GL_FLOAT,
         GL_FALSE,
-        3 * sizeof(float),
+        5 * sizeof(float),
         (void*)0
     );
 
     glEnableVertexAttribArray(0);
+
 
     glBindBuffer(GL_ARRAY_BUFFER,0);
     glBindVertexArray(0);
@@ -235,6 +287,8 @@ int main()
         glUseProgram(shaderProgram);
 
         glBindVertexArray(VAO);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texID);
 
         glDrawArrays(GL_TRIANGLES,0,3);
 
