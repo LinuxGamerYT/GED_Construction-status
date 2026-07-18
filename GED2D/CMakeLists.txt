@@ -8,7 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 file(GLOB_RECURSE SOURCES
     ${CMAKE_SOURCE_DIR}/src/*.cpp
     ${CMAKE_SOURCE_DIR}/Dependencies/GLAD/src/glad.c
-)
+    )
 
 add_executable(GameEngineDev ${SOURCES})
 
@@ -17,6 +17,7 @@ target_include_directories(GameEngineDev PRIVATE
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/Dependencies/SDL/include
     ${CMAKE_SOURCE_DIR}/Dependencies/GLAD/include
+    ${CMAKE_SOURCE_DIR}/Dependencies/stb
 )
 
 # SDL LIBS
